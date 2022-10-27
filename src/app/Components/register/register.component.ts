@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/userService/user.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   registerForm !: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private user:UserService) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -28,12 +29,14 @@ export class RegisterComponent implements OnInit {
 
       let data={
     
-        FirstName:this.registerForm.value.firstname,
-        LastName:this.registerForm.value.lastname,
-        Email:this.registerForm.value.email,
-        Password:this.registerForm.value.password
+        firstName:this.registerForm.value.firstname,
+        lastName:this.registerForm.value.lastname,
+        email:this.registerForm.value.email,
+        password:this.registerForm.value.password
       }
-     
+      this.user.register(data).subscribe((result:any)=>{
+        console.log(result);
+      });
     }
     else{
       console.log("invalid data",this.registerForm.value);

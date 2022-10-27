@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './Components/register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Components/login/login.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -26,7 +25,7 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    // LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,6 +38,7 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
