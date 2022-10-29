@@ -1,0 +1,74 @@
+
+<div class="example-container">
+  <mat-toolbar color="black" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div>
+      <img class="keepImage" src="../../../assets/keep_2020q4_48dp.png">
+    </div>
+    <div>
+      <h1 class="example-app-name">Fundoo</h1>
+    </div>
+
+    <div class="searchbox">
+      <img class="search-icon" src="../../../assets/search_FILL0_wght400_GRAD0_opsz48.svg">
+      <input class="search" placeholder="Search">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="nav">
+      <div class="refresh">
+        <button mat-icon-button matTooltip="Refresh">
+          <img class="header-icons" src="../../../assets/refresh_FILL0_wght400_GRAD0_opsz48.svg">
+        </button>
+      </div>
+      <div class="listview">
+        <button mat-icon-button matTooltip="List view">
+          <img class="header-icons" src="../../../assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg">
+        </button>
+        <button mat-icon-button matTooltip="Grid view">
+          <img class="header-icons" src="../../../assets/grid_view_FILL0_wght400_GRAD0_opsz48.svg">
+        </button>
+      </div>
+      <div>
+        <button mat-icon-button matTooltip="Settings">
+          <img class="header-icons" src="../../../assets/settings_FILL0_wght400_GRAD0_opsz48.svg">
+        </button>
+      </div>
+      <div class="app-acc">
+        <button mat-icon-button matTooltip="Apps">
+          <img class="header-icons" src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg">
+        </button>
+
+        <button mat-icon-button matTooltip="Sign out">
+          <img class="header-icons" src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg">
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav mode ="side">
+      <mat-nav-list class="sidenav"> 
+        <a mat-list-item>
+          <img class="icon" src="../../../assets/lightbulb_black_24dp.svg" alt="notes">
+          Notes</a>
+        <a mat-list-item>
+          <img class="icon" src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" alt="Reminder">
+          Reminder</a>
+        <a mat-list-item>
+          <img class="icon" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit Lable">
+          Edit Label</a>
+        <a mat-list-item>
+          <img class="icon" src="../../../assets/archive.svg" alt="archive">
+          Archive</a>
+        <a mat-list-item>
+          <img class="icon" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="Trash">
+          Trash</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
